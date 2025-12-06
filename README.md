@@ -1,18 +1,36 @@
-## Getting Started
+# project-java-herencia
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+**Actividad:** Herencia y polimorfismo en Java – Generalización de clases y sobreescritura de métodos  
+**Duración esperada:** 4 horas
 
-## Folder Structure
+## Estructura del proyecto
+- `Vehicle` (clase abstracta): atributos y métodos comunes.
+- `Car`, `Motorcycle` (clases derivadas): especializan `Vehicle` y sobreescriben métodos.
+- `Engine`, `Wheel` (componentes): composición dentro de `Vehicle`.
 
-The workspace contains two folders by default, where:
+## Diagrama de clases (texto)
+Vehicle (abstract)
+├─ Car
+└─ Motorcycle
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Vehicle -> contiene -> Engine
+Vehicle -> contiene -> Wheel
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Explicación breve
+La clase `Vehicle` define los atributos comunes (`brand`, `model`, `engine`) y métodos abstractos `start()` y `stop()`. `Car` y `Motorcycle` heredan de `Vehicle` y **sobreescriben** `start()`, `stop()` y `describe()`. Se demuestra polimorfismo creando un arreglo `Vehicle[]` que contiene instancias de `Car` y `Motorcycle` y llamando métodos desde referencias `Vehicle`.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Ejecución
+Compilar y ejecutar la clase `App` (JDK 17).  
+Salida esperada (se incluye captura):
 
-## Dependency Management
+![Salida por consola](docs/console-screenshot.png)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Commits realizados
+1. `feat: creación del repositorio base para proyecto de herencia`  
+2. `feat: agregar clase base Vehicle (abstracta) con atributos comunes`  
+3. `feat: implementar componentes Engine y Wheel (composición)`  
+4. `feat: agregar clases derivadas Car y Motorcycle con sobreescritura`  
+5. `feat: añadir clase App con ejemplos y demostración de polimorfismo`  
+6. `docs: actualización del README con explicación de jerarquía y captura de ejecución`
+
+---
